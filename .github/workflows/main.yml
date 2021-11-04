@@ -14,8 +14,6 @@ jobs:
         python-version: 3.8
 
     - name: Install dependencies
-      env:
-        secret_key: ${{secrets.SECRET_KEY}}
       run: | 
         # обновление pip
         python -m pip install --upgrade pip 
@@ -25,6 +23,8 @@ jobs:
         pip install -r requirements.txt 
 
     - name: Test with flake8 and django tests
+      env:
+        SECRET_KEY: ${{secrets.SECRET_KEY}}
       run: |
         # запуск проверки проекта по flake8
         python -m flake8
