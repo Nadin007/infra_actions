@@ -3,7 +3,5 @@
 
 # Allowed
 !infra_project
-!templates
 !requirements.txt
 !README.md
-!static
